@@ -1,26 +1,18 @@
 {
-  "name": "url-exists",
-  "version": "1.0.3",
-  "description": "Check if a url exists",
+  "name": "url-exists-async-await",
+  "version": "1.0.0",
+  "description": "Check if a url exists with async await",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "ava"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boblauer/url-exists.git"
-  },
-  "keywords": [
-    "url",
-    "exists"
-  ],
-  "author": "Bob Lauer <rlauer@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/boblauer/url-exists/issues"
-  },
-  "homepage": "https://github.com/boblauer/url-exists#readme",
+  "author": "Sandra Lundgren <sandra.lundgren@symbio.com>",
+  "license": "ISC",
   "dependencies": {
-    "request": "^2.69.0"
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.4"
   }
 }

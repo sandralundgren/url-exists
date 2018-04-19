@@ -1,22 +1,27 @@
-var assert = require('assert');
+import test      from 'ava';
+import urlExists from '../index';
 
-var urlExists = require('..');
+test('succeds 1', async t => {
+  const value = await urlExists('https://www.google.com');
+  t.true(value);
+});
 
-urlExists('https://www.google.com', function(err, exists) {
-  assert(exists === true);
+test('succeds 2', async t => {
+  const value = await urlExists('https://google.com');
+  t.true(value);
+});
 
-  urlExists('https://google.com', function(err, exists) {
-    assert(exists === true);
+test('succeds 3', async t => {
+  const value = await urlExists('http://www.google.com');
+  t.true(value);
+});
 
-    urlExists('http://www.google.com', function(err, exists) {
-      assert(exists === true);
+test('fails 1', async t => {
+  const value = await urlExists('http://ddcxbcbcbg.fake');
+  t.false(value);
+});
 
-      urlExists('https://www.asdflkasdfljalsfdjasfdljklsjafasdfljjkasfdsafdljfdsaljakljsdljksafasfdlk.lasjkd', function(err, exists) {
-        assert(exists === false);
-
-        console.log('All tests pass!');
-        process.exit(0);
-      });
-    });
-  });
+test('fails 2', async t => {
+  const value = await urlExists('unicorn');
+  t.false(value);
 });
