@@ -13,7 +13,7 @@ const urlExists = require('url-exists-async-await');
 const urlVal = async(data) => {
   try {
     const result = await urlExists(data);
-      console.log(`Result for ${data} is ${result}`);
+    console.log(`Result for ${data} is ${result}`);
   } catch(err) {
     console.log(err);
   }
